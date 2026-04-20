@@ -162,10 +162,10 @@ class GetEnrichmentJobClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['semanticStoreId', 'enrichmentJobId']
-        resource_path = "/20260325/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}"
+        resource_path = "/semanticStores/{semanticStoreId}/enrichmentJobs/{enrichmentJobId}"
         method = "GET"
         operation_name = "get_enrichment_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GetEnrichmentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

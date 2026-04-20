@@ -60,6 +60,7 @@ API Reference
 * :doc:`Connector Plugins <sch/client/oci.sch.ConnectorPluginsClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
+* :doc:`Container Registry <container_registry/client/oci.container_registry.ContainerRegistryClient>`
 * :doc:`Cost Ad <budget/client/oci.budget.CostAdClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
@@ -99,6 +100,7 @@ API Reference
 * :doc:`Distributed Db Work Request Service <distributed_database/client/oci.distributed_database.DistributedDbWorkRequestServiceClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
+* :doc:`Dynamic Set <os_management_hub/client/oci.os_management_hub.DynamicSetClient>`
 * :doc:`Ekm <key_management/client/oci.key_management.EkmClient>`
 * :doc:`Em Warehouse <em_warehouse/client/oci.em_warehouse.EmWarehouseClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
@@ -183,6 +185,8 @@ API Reference
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
 * :doc:`Multi Clouds Metadata <multicloud/client/oci.multicloud.MultiCloudsMetadataClient>`
+* :doc:`Multicloud Alerts <multicloud/client/oci.multicloud.MulticloudAlertsClient>`
+* :doc:`Multicloud Policies <multicloud/client/oci.multicloud.MulticloudPoliciesClient>`
 * :doc:`Multicloud Resources <multicloud/client/oci.multicloud.MulticloudResourcesClient>`
 * :doc:`Multicloudsubscriptions <multicloud/client/oci.multicloud.MulticloudsubscriptionsClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
@@ -194,6 +198,7 @@ API Reference
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Ocb Agent Svc <cloud_bridge/client/oci.cloud_bridge.OcbAgentSvcClient>`
 * :doc:`Occ Demand Signal <demand_signal/client/oci.demand_signal.OccDemandSignalClient>`
+* :doc:`Occ Metric Alarm <demand_signal/client/oci.demand_signal.OccMetricAlarmClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oci Cache Config Set <redis/client/oci.redis.OciCacheConfigSetClient>`
@@ -225,6 +230,7 @@ API Reference
 * :doc:`Organization <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrganizationClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
+* :doc:`Partner Integeration <self/client/oci.self.PartnerIntegerationClient>`
 * :doc:`Perfhub <database_management/client/oci.database_management.PerfhubClient>`
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
@@ -274,6 +280,7 @@ API Reference
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Subscribed Service <onesubscription/client/oci.onesubscription.SubscribedServiceClient>`
 * :doc:`Subscribers <apigateway/client/oci.apigateway.SubscribersClient>`
+* :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
@@ -363,6 +370,7 @@ API Reference
     compute_instance_agent
     container_engine
     container_instances
+    container_registry
     core
     dashboard_service
     data_catalog
@@ -470,6 +478,7 @@ API Reference
     sch
     secrets
     security_attribute
+    self
     service_catalog
     service_manager_proxy
     stack_monitoring

@@ -5,6 +5,68 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.171.0 - 2026-04-14
+====================
+
+Added 
+----- 
+* Support for filesystem snapshot locking for ransomware protection in the File Storage service 
+* Support for creating refresh-able metadata clones in Autonomous Database in the Database service 
+* Support for cross-region Data Guard for Azure, GCP, and AWS KMS-based databases in the Database MultiCloud service 
+* Support for multicloud policies API and OMHub Resource View and Policy Hub UI features in the Multicloud service 
+* Support for Development and Production domain group types in place of Lightweight and Standard in the OCI Internet of Things (OCI IoT) service 
+* Support for Fusion Data Intelligence (FDI) self-service integration in the Fusion Application as a Service 
+* Support for implementing Customer self-service feature to add egress ports in the Fusion Application as a Service 
+* Support for a new flag to the create and update capacity reservation APIs in the Compute service 
+* Support for alarms and notifications in the OCI Control Center service  
+
+Breaking 
+-------- 
+* Parameter `compartment_id_in_subtree` was removed from the model `OmhubNetworkAnchorClient ` in the MultiCloud service  
+
+====================
+2.170.0 - 2026-04-07
+====================
+
+Added 
+----- 
+* Support for managing OLVM environment and endpoint fields for asset sources in the Cloud Bridge service 
+* Support for managing OLVM environment asset class name, asset class version, and asset details in the Cloud Bridge service 
+* Support for Ubuntu, Windows Server 2025, Windows 11, and Dynamic Groupings in the OS Management Hub service 
+* Support for S3 virtual host URLs for existing and regionally unique buckets in the Object Storage service 
+* Support for dual-stack IPv6 endpoints in the Management Agent Cloud service 
+* Support for generic VNIC Attachment node pools with application resource-based pod networking and secondary VNIC profiles in the Kubernetes Engine service 
+* Support for getting currentSize of the instancePool resource in the Compute service 
+* Support for new launch instance networkType value ACCELERATEDPV in the Compute service  
+
+Breaking 
+-------- 
+* Removed parameters `freeform_tags` and `defined_tags` from ApplianceImageSummary model from Cloud bridge service  
+
+====================
+2.169.0 - 2026-03-31
+====================
+
+Added 
+----- 
+* Support for the Container Registry service 
+* Support for the Service Enablement Lifecycle Framework (SELF) service 
+* Support for custom CA certificates for LDAP on mount targets in the File Storage service 
+* Support for using IPv6 addresses as mount target IP addresses in the File Storage service 
+* Support for natural language to SQL (NL2SQL) in the Generative AI Data service 
+* Support for Zero Data Loss recovery in the Database service 
+* Support for private network replication in the Cloud Migrations service 
+* Support for reserved private IPs in the Network Load Balancer service 
+* Support for creating and updating model deployments with public egress in the Data Science service 
+* Support for validation of migrated Disaster Recovery instances in the Integration service 
+* Support for additional AI Autonomous Database types (Autonomous JSON DB (AJD), Autonomous APEX (APEX), and Autonomous Vector DB (AVD)) in the Ops Insights service 
+* Support for controlled updates in the MySQL HeatWave service  
+
+Breaking 
+-------- 
+* Parameter `compartment_id` was removed from the model `GenerateSqlFromNlJob` in the Generative AI Data service  
+
+====================
 2.168.3 - 2026-03-24
 ====================
 

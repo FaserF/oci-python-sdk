@@ -12,17 +12,27 @@ from .admin_user_collection import AdminUserCollection
 from .admin_user_summary import AdminUserSummary
 from .allow_rule import AllowRule
 from .capabilities import Capabilities
+from .certificate_info import CertificateInfo
 from .change_fusion_environment_compartment_details import ChangeFusionEnvironmentCompartmentDetails
 from .change_fusion_environment_family_compartment_details import ChangeFusionEnvironmentFamilyCompartmentDetails
 from .create_data_masking_activity_details import CreateDataMaskingActivityDetails
+from .create_email_subdomain_details import CreateEmailSubdomainDetails
 from .create_fusion_environment_admin_user_details import CreateFusionEnvironmentAdminUserDetails
 from .create_fusion_environment_details import CreateFusionEnvironmentDetails
 from .create_fusion_environment_family_details import CreateFusionEnvironmentFamilyDetails
+from .create_marketing_brand_details import CreateMarketingBrandDetails
+from .create_microsite_details import CreateMicrositeDetails
 from .create_refresh_activity_details import CreateRefreshActivityDetails
 from .create_service_attachment_details import CreateServiceAttachmentDetails
+from .create_vanity_domain_activity_details import CreateVanityDomainActivityDetails
+from .create_vanity_domain_details import CreateVanityDomainDetails
 from .data_masking_activity import DataMaskingActivity
 from .data_masking_activity_collection import DataMaskingActivityCollection
 from .data_masking_activity_summary import DataMaskingActivitySummary
+from .dns_record import DnsRecord
+from .email_subdomain import EmailSubdomain
+from .email_subdomain_collection import EmailSubdomainCollection
+from .email_subdomain_summary import EmailSubdomainSummary
 from .environment_role import EnvironmentRole
 from .extract_details_collection import ExtractDetailsCollection
 from .extract_details_summary import ExtractDetailsSummary
@@ -39,6 +49,15 @@ from .get_maintenance_policy_details import GetMaintenancePolicyDetails
 from .kms_key_info import KmsKeyInfo
 from .limit_and_usage import LimitAndUsage
 from .maintenance_policy import MaintenancePolicy
+from .marketing_brand import MarketingBrand
+from .marketing_brand_collection import MarketingBrandCollection
+from .marketing_brand_email_subdomain_csr import MarketingBrandEmailSubdomainCsr
+from .marketing_brand_email_subdomain_dns_config import MarketingBrandEmailSubdomainDnsConfig
+from .marketing_brand_microsite_dns_config import MarketingBrandMicrositeDnsConfig
+from .marketing_brand_summary import MarketingBrandSummary
+from .microsite import Microsite
+from .microsite_collection import MicrositeCollection
+from .microsite_summary import MicrositeSummary
 from .patch_action import PatchAction
 from .quarterly_upgrade_begin_times import QuarterlyUpgradeBeginTimes
 from .refresh_activity import RefreshActivity
@@ -46,6 +65,7 @@ from .refresh_activity_collection import RefreshActivityCollection
 from .refresh_activity_summary import RefreshActivitySummary
 from .refresh_details import RefreshDetails
 from .refresh_issue_details import RefreshIssueDetails
+from .request_email_subdomain_csr_details import RequestEmailSubdomainCsrDetails
 from .reset_fusion_environment_password_details import ResetFusionEnvironmentPasswordDetails
 from .rule import Rule
 from .rule_condition import RuleCondition
@@ -64,11 +84,23 @@ from .subscription_sku import SubscriptionSku
 from .time_available_for_refresh import TimeAvailableForRefresh
 from .time_available_for_refresh_collection import TimeAvailableForRefreshCollection
 from .time_available_for_refresh_summary import TimeAvailableForRefreshSummary
+from .update_email_subdomain_details import UpdateEmailSubdomainDetails
 from .update_family_maintenance_policy_details import UpdateFamilyMaintenancePolicyDetails
 from .update_fusion_environment_details import UpdateFusionEnvironmentDetails
 from .update_fusion_environment_family_details import UpdateFusionEnvironmentFamilyDetails
+from .update_marketing_brand_details import UpdateMarketingBrandDetails
+from .update_microsite_details import UpdateMicrositeDetails
 from .update_refresh_activity_details import UpdateRefreshActivityDetails
+from .update_vanity_domain_activity_details import UpdateVanityDomainActivityDetails
+from .update_vanity_domain_details import UpdateVanityDomainDetails
 from .upgrade_action import UpgradeAction
+from .upload_email_subdomain_certificate_details import UploadEmailSubdomainCertificateDetails
+from .upload_vanity_domain_certificate_details import UploadVanityDomainCertificateDetails
+from .vanity_dns_record import VanityDnsRecord
+from .vanity_domain import VanityDomain
+from .vanity_domain_activity import VanityDomainActivity
+from .vanity_domain_collection import VanityDomainCollection
+from .vanity_domain_summary import VanityDomainSummary
 from .verify_service_attachment_details import VerifyServiceAttachmentDetails
 from .vertex_action import VertexAction
 from .work_request import WorkRequest
@@ -88,17 +120,27 @@ fusion_apps_type_mapping = {
     "AdminUserSummary": AdminUserSummary,
     "AllowRule": AllowRule,
     "Capabilities": Capabilities,
+    "CertificateInfo": CertificateInfo,
     "ChangeFusionEnvironmentCompartmentDetails": ChangeFusionEnvironmentCompartmentDetails,
     "ChangeFusionEnvironmentFamilyCompartmentDetails": ChangeFusionEnvironmentFamilyCompartmentDetails,
     "CreateDataMaskingActivityDetails": CreateDataMaskingActivityDetails,
+    "CreateEmailSubdomainDetails": CreateEmailSubdomainDetails,
     "CreateFusionEnvironmentAdminUserDetails": CreateFusionEnvironmentAdminUserDetails,
     "CreateFusionEnvironmentDetails": CreateFusionEnvironmentDetails,
     "CreateFusionEnvironmentFamilyDetails": CreateFusionEnvironmentFamilyDetails,
+    "CreateMarketingBrandDetails": CreateMarketingBrandDetails,
+    "CreateMicrositeDetails": CreateMicrositeDetails,
     "CreateRefreshActivityDetails": CreateRefreshActivityDetails,
     "CreateServiceAttachmentDetails": CreateServiceAttachmentDetails,
+    "CreateVanityDomainActivityDetails": CreateVanityDomainActivityDetails,
+    "CreateVanityDomainDetails": CreateVanityDomainDetails,
     "DataMaskingActivity": DataMaskingActivity,
     "DataMaskingActivityCollection": DataMaskingActivityCollection,
     "DataMaskingActivitySummary": DataMaskingActivitySummary,
+    "DnsRecord": DnsRecord,
+    "EmailSubdomain": EmailSubdomain,
+    "EmailSubdomainCollection": EmailSubdomainCollection,
+    "EmailSubdomainSummary": EmailSubdomainSummary,
     "EnvironmentRole": EnvironmentRole,
     "ExtractDetailsCollection": ExtractDetailsCollection,
     "ExtractDetailsSummary": ExtractDetailsSummary,
@@ -115,6 +157,15 @@ fusion_apps_type_mapping = {
     "KmsKeyInfo": KmsKeyInfo,
     "LimitAndUsage": LimitAndUsage,
     "MaintenancePolicy": MaintenancePolicy,
+    "MarketingBrand": MarketingBrand,
+    "MarketingBrandCollection": MarketingBrandCollection,
+    "MarketingBrandEmailSubdomainCsr": MarketingBrandEmailSubdomainCsr,
+    "MarketingBrandEmailSubdomainDnsConfig": MarketingBrandEmailSubdomainDnsConfig,
+    "MarketingBrandMicrositeDnsConfig": MarketingBrandMicrositeDnsConfig,
+    "MarketingBrandSummary": MarketingBrandSummary,
+    "Microsite": Microsite,
+    "MicrositeCollection": MicrositeCollection,
+    "MicrositeSummary": MicrositeSummary,
     "PatchAction": PatchAction,
     "QuarterlyUpgradeBeginTimes": QuarterlyUpgradeBeginTimes,
     "RefreshActivity": RefreshActivity,
@@ -122,6 +173,7 @@ fusion_apps_type_mapping = {
     "RefreshActivitySummary": RefreshActivitySummary,
     "RefreshDetails": RefreshDetails,
     "RefreshIssueDetails": RefreshIssueDetails,
+    "RequestEmailSubdomainCsrDetails": RequestEmailSubdomainCsrDetails,
     "ResetFusionEnvironmentPasswordDetails": ResetFusionEnvironmentPasswordDetails,
     "Rule": Rule,
     "RuleCondition": RuleCondition,
@@ -140,11 +192,23 @@ fusion_apps_type_mapping = {
     "TimeAvailableForRefresh": TimeAvailableForRefresh,
     "TimeAvailableForRefreshCollection": TimeAvailableForRefreshCollection,
     "TimeAvailableForRefreshSummary": TimeAvailableForRefreshSummary,
+    "UpdateEmailSubdomainDetails": UpdateEmailSubdomainDetails,
     "UpdateFamilyMaintenancePolicyDetails": UpdateFamilyMaintenancePolicyDetails,
     "UpdateFusionEnvironmentDetails": UpdateFusionEnvironmentDetails,
     "UpdateFusionEnvironmentFamilyDetails": UpdateFusionEnvironmentFamilyDetails,
+    "UpdateMarketingBrandDetails": UpdateMarketingBrandDetails,
+    "UpdateMicrositeDetails": UpdateMicrositeDetails,
     "UpdateRefreshActivityDetails": UpdateRefreshActivityDetails,
+    "UpdateVanityDomainActivityDetails": UpdateVanityDomainActivityDetails,
+    "UpdateVanityDomainDetails": UpdateVanityDomainDetails,
     "UpgradeAction": UpgradeAction,
+    "UploadEmailSubdomainCertificateDetails": UploadEmailSubdomainCertificateDetails,
+    "UploadVanityDomainCertificateDetails": UploadVanityDomainCertificateDetails,
+    "VanityDnsRecord": VanityDnsRecord,
+    "VanityDomain": VanityDomain,
+    "VanityDomainActivity": VanityDomainActivity,
+    "VanityDomainCollection": VanityDomainCollection,
+    "VanityDomainSummary": VanityDomainSummary,
     "VerifyServiceAttachmentDetails": VerifyServiceAttachmentDetails,
     "VertexAction": VertexAction,
     "WorkRequest": WorkRequest,

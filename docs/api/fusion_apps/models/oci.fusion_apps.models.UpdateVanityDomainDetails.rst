@@ -1,9 +1,9 @@
-UpdateComputeHostsDetails
+UpdateVanityDomainDetails
 =========================
 
-.. currentmodule:: oci.core.models
+.. currentmodule:: oci.fusion_apps.models
 
-.. autoclass:: UpdateComputeHostsDetails
+.. autoclass:: UpdateVanityDomainDetails
     :show-inheritance:
     :special-members: __init__
     :members:

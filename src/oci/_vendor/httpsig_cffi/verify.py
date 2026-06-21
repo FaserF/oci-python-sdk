@@ -9,9 +9,7 @@ Module to assist in verifying a signed header.
 """
 from oci._vendor import six
 
-from cryptography.hazmat.backends import default_backend  # noqa: 401
-from cryptography.hazmat.primitives import hashes, hmac, serialization  # noqa: 401
-from cryptography.hazmat.primitives.asymmetric import rsa, padding  # noqa: 401
+from cryptography.hazmat.primitives.asymmetric import padding  # noqa: 401
 from cryptography.exceptions import InvalidSignature  # noqa: 401
 
 from base64 import b64decode

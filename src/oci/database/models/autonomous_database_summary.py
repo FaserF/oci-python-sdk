@@ -309,6 +309,10 @@ class AutonomousDatabaseSummary(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     #: A constant which can be used with the clone_type property of a AutonomousDatabaseSummary.
     #: This constant has a value of "FULL"
     CLONE_TYPE_FULL = "FULL"
@@ -884,9 +888,13 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the remote_disaster_recovery_configuration property of this AutonomousDatabaseSummary.
         :type remote_disaster_recovery_configuration: oci.database.models.DisasterRecoveryConfiguration
 
+        :param access_types:
+            The value to assign to the access_types property of this AutonomousDatabaseSummary.
+        :type access_types: list[str]
+
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousDatabaseSummary.
-            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
@@ -1049,6 +1057,7 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
+            'access_types': 'list[str]',
             'net_services_architecture': 'str',
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
@@ -1189,6 +1198,7 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
+            'access_types': 'accessTypes',
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
@@ -1328,6 +1338,7 @@ class AutonomousDatabaseSummary(object):
         self._disaster_recovery_region_type = None
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
+        self._access_types = None
         self._net_services_architecture = None
         self._availability_domain = None
         self._cluster_placement_group_id = None
@@ -3134,6 +3145,7 @@ class AutonomousDatabaseSummary(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -3159,6 +3171,7 @@ class AutonomousDatabaseSummary(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4875,12 +4888,36 @@ class AutonomousDatabaseSummary(object):
         self._remote_disaster_recovery_configuration = remote_disaster_recovery_configuration
 
     @property
+    def access_types(self):
+        """
+        Gets the access_types of this AutonomousDatabaseSummary.
+        List of access types for an Autonomous AI Database.
+
+
+        :return: The access_types of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._access_types
+
+    @access_types.setter
+    def access_types(self, access_types):
+        """
+        Sets the access_types of this AutonomousDatabaseSummary.
+        List of access types for an Autonomous AI Database.
+
+
+        :param access_types: The access_types of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._access_types = access_types
+
+    @property
     def net_services_architecture(self):
         """
         Gets the net_services_architecture of this AutonomousDatabaseSummary.
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 
-        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -4899,7 +4936,7 @@ class AutonomousDatabaseSummary(object):
         :param net_services_architecture: The net_services_architecture of this AutonomousDatabaseSummary.
         :type: str
         """
-        allowed_values = ["DEDICATED", "SHARED"]
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture

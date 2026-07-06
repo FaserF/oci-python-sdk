@@ -307,6 +307,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDatabase.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     #: A constant which can be used with the clone_type property of a AutonomousDatabase.
     #: This constant has a value of "FULL"
     CLONE_TYPE_FULL = "FULL"
@@ -323,6 +327,10 @@ class AutonomousDatabase(object):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param external_location_zone:
+            The value to assign to the external_location_zone property of this AutonomousDatabase.
+        :type external_location_zone: str
 
         :param id:
             The value to assign to the id property of this AutonomousDatabase.
@@ -882,9 +890,13 @@ class AutonomousDatabase(object):
             The value to assign to the remote_disaster_recovery_configuration property of this AutonomousDatabase.
         :type remote_disaster_recovery_configuration: oci.database.models.DisasterRecoveryConfiguration
 
+        :param access_types:
+            The value to assign to the access_types property of this AutonomousDatabase.
+        :type access_types: list[str]
+
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousDatabase.
-            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
@@ -916,6 +928,7 @@ class AutonomousDatabase(object):
 
         """
         self.swagger_types = {
+            'external_location_zone': 'str',
             'id': 'str',
             'compartment_id': 'str',
             'subscription_id': 'str',
@@ -1047,6 +1060,7 @@ class AutonomousDatabase(object):
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
+            'access_types': 'list[str]',
             'net_services_architecture': 'str',
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
@@ -1056,6 +1070,7 @@ class AutonomousDatabase(object):
             'local_adg_resource_pool_leader_id': 'str'
         }
         self.attribute_map = {
+            'external_location_zone': 'externalLocationZone',
             'id': 'id',
             'compartment_id': 'compartmentId',
             'subscription_id': 'subscriptionId',
@@ -1187,6 +1202,7 @@ class AutonomousDatabase(object):
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
+            'access_types': 'accessTypes',
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
@@ -1195,6 +1211,7 @@ class AutonomousDatabase(object):
             'additional_attributes': 'additionalAttributes',
             'local_adg_resource_pool_leader_id': 'localAdgResourcePoolLeaderId'
         }
+        self._external_location_zone = None
         self._id = None
         self._compartment_id = None
         self._subscription_id = None
@@ -1326,6 +1343,7 @@ class AutonomousDatabase(object):
         self._disaster_recovery_region_type = None
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
+        self._access_types = None
         self._net_services_architecture = None
         self._availability_domain = None
         self._cluster_placement_group_id = None
@@ -1333,6 +1351,30 @@ class AutonomousDatabase(object):
         self._clone_type = None
         self._additional_attributes = None
         self._local_adg_resource_pool_leader_id = None
+
+    @property
+    def external_location_zone(self):
+        """
+        Gets the external_location_zone of this AutonomousDatabase.
+        The external logical zone where the Autonomous AI Database Serverless instance is located (Intended for multicloud use).
+
+
+        :return: The external_location_zone of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._external_location_zone
+
+    @external_location_zone.setter
+    def external_location_zone(self, external_location_zone):
+        """
+        Sets the external_location_zone of this AutonomousDatabase.
+        The external logical zone where the Autonomous AI Database Serverless instance is located (Intended for multicloud use).
+
+
+        :param external_location_zone: The external_location_zone of this AutonomousDatabase.
+        :type: str
+        """
+        self._external_location_zone = external_location_zone
 
     @property
     def id(self):
@@ -3132,6 +3174,7 @@ class AutonomousDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -3157,6 +3200,7 @@ class AutonomousDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4873,12 +4917,36 @@ class AutonomousDatabase(object):
         self._remote_disaster_recovery_configuration = remote_disaster_recovery_configuration
 
     @property
+    def access_types(self):
+        """
+        Gets the access_types of this AutonomousDatabase.
+        List of access types for an Autonomous AI Database.
+
+
+        :return: The access_types of this AutonomousDatabase.
+        :rtype: list[str]
+        """
+        return self._access_types
+
+    @access_types.setter
+    def access_types(self, access_types):
+        """
+        Sets the access_types of this AutonomousDatabase.
+        List of access types for an Autonomous AI Database.
+
+
+        :param access_types: The access_types of this AutonomousDatabase.
+        :type: list[str]
+        """
+        self._access_types = access_types
+
+    @property
     def net_services_architecture(self):
         """
         Gets the net_services_architecture of this AutonomousDatabase.
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 
-        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -4897,7 +4965,7 @@ class AutonomousDatabase(object):
         :param net_services_architecture: The net_services_architecture of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["DEDICATED", "SHARED"]
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture

@@ -71,6 +71,7 @@ Container Engine
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
     oci.container_engine.models.NodePoolPodNetworkOptionDetails
+    oci.container_engine.models.NodePoolPrimaryVnicDetails
     oci.container_engine.models.NodePoolSecondaryVnicDetails
     oci.container_engine.models.NodePoolSummary
     oci.container_engine.models.NodeShapeConfig
@@ -111,6 +112,7 @@ Container Engine
     oci.container_engine.models.UpdateWorkloadMappingDetails
     oci.container_engine.models.VirtualNode
     oci.container_engine.models.VirtualNodePool
+    oci.container_engine.models.VirtualNodePoolCyclingDetails
     oci.container_engine.models.VirtualNodePoolSummary
     oci.container_engine.models.VirtualNodeSummary
     oci.container_engine.models.VirtualNodeTags

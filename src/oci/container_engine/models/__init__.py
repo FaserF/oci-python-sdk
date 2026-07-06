@@ -59,6 +59,7 @@ from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
 from .node_pool_pod_network_option_details import NodePoolPodNetworkOptionDetails
+from .node_pool_primary_vnic_details import NodePoolPrimaryVnicDetails
 from .node_pool_secondary_vnic_details import NodePoolSecondaryVnicDetails
 from .node_pool_summary import NodePoolSummary
 from .node_shape_config import NodeShapeConfig
@@ -99,6 +100,7 @@ from .update_virtual_node_pool_details import UpdateVirtualNodePoolDetails
 from .update_workload_mapping_details import UpdateWorkloadMappingDetails
 from .virtual_node import VirtualNode
 from .virtual_node_pool import VirtualNodePool
+from .virtual_node_pool_cycling_details import VirtualNodePoolCyclingDetails
 from .virtual_node_pool_summary import VirtualNodePoolSummary
 from .virtual_node_summary import VirtualNodeSummary
 from .virtual_node_tags import VirtualNodeTags
@@ -165,6 +167,7 @@ container_engine_type_mapping = {
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
     "NodePoolPodNetworkOptionDetails": NodePoolPodNetworkOptionDetails,
+    "NodePoolPrimaryVnicDetails": NodePoolPrimaryVnicDetails,
     "NodePoolSecondaryVnicDetails": NodePoolSecondaryVnicDetails,
     "NodePoolSummary": NodePoolSummary,
     "NodeShapeConfig": NodeShapeConfig,
@@ -205,6 +208,7 @@ container_engine_type_mapping = {
     "UpdateWorkloadMappingDetails": UpdateWorkloadMappingDetails,
     "VirtualNode": VirtualNode,
     "VirtualNodePool": VirtualNodePool,
+    "VirtualNodePoolCyclingDetails": VirtualNodePoolCyclingDetails,
     "VirtualNodePoolSummary": VirtualNodePoolSummary,
     "VirtualNodeSummary": VirtualNodeSummary,
     "VirtualNodeTags": VirtualNodeTags,

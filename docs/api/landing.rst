@@ -61,7 +61,8 @@ API Reference
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
 * :doc:`Container Registry <container_registry/client/oci.container_registry.ContainerRegistryClient>`
-* :doc:`Cost Ad <budget/client/oci.budget.CostAdClient>`
+* :doc:`Cost Ad <costad/client/oci.costad.CostAdClient>`
+* :doc:`Cost Ad <costad/client/oci.costad.CostAdClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
 * :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`
@@ -77,6 +78,7 @@ API Reference
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`Database Recovery <recovery/client/oci.recovery.DatabaseRecoveryClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
+* :doc:`Database Tools Runtime <database_tools_runtime/client/oci.database_tools_runtime.DatabaseToolsRuntimeClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
 * :doc:`Datastore <ocvp/client/oci.ocvp.DatastoreClient>`
 * :doc:`Datastore Cluster <ocvp/client/oci.ocvp.DatastoreClusterClient>`
@@ -157,6 +159,7 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Limits Increase <limits_increase/client/oci.limits_increase.LimitsIncreaseClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
+* :doc:`Link Features <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkFeaturesClient>`
 * :doc:`List Enrichment Jobs <generative_ai_data/client/oci.generative_ai_data.ListEnrichmentJobsClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`
@@ -373,6 +376,7 @@ API Reference
     container_instances
     container_registry
     core
+    costad
     dashboard_service
     data_catalog
     data_flow
@@ -385,6 +389,7 @@ API Reference
     database_management
     database_migration
     database_tools
+    database_tools_runtime
     dblm
     dbmulticloud
     delegate_access_control

@@ -5,7 +5,12 @@
 import hashlib
 import hmac
 import struct
-import crc32c
+try:
+    import crc32c
+    _CRC32C_AVAILABLE = True
+except ImportError:
+    _CRC32C_AVAILABLE = False
+    crc32c = None  # type: ignore[assignment]
 from cryptography.exceptions import InternalError
 from .. import md5 as MD5
 from oci.fips import is_fips_mode

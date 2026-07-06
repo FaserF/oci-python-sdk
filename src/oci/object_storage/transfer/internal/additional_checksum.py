@@ -6,7 +6,12 @@ import io
 import hashlib
 import base64
 import struct
-import crc32c
+try:
+    import crc32c
+    _CRC32C_AVAILABLE = True
+except ImportError:
+    _CRC32C_AVAILABLE = False
+    crc32c = None  # type: ignore[assignment]
 from .buffered_part_reader import BufferedPartReader
 
 
